@@ -36,6 +36,8 @@ for filename in os.listdir(folder_path):
                 used_names.append(id[1:])
                 break
         if new_filename != '':
+            f = open(folder_path + '/track names.txt', 'a')
+            f.write('Track: ' + filename[0:-4] + ' Slot: ' + new_filename + '\n')
             os.rename(file_path, new_filename)
         elif new_filename == '' and len(not_slots) > 0:
             incompatible = ' '
